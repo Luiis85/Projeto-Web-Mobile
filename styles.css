@@ -1,0 +1,189 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Transparente e Responsiva */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+    transition: background 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.navbar:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff0000;
+}
+
+/* Ajustando espaçamento do conteúdo para não ficar atrás da navbar */
+.banner {
+        background: url(https://global.discourse-cdn.com/mxnu/original/2X/3/3ba9a4a769850eefb18d972949a3b5d63c691414.jpeg) no-repeat center center;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 50px 20px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+
+/* Botões de Leia Mais - Estilizados */
+.read-more {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff0000, #800000);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.read-more:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.5);
+}
+
+/* Ajustando tamanho das imagens dentro dos cards */
+.news-item img, .highlight-main img, .highlight-item img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Animação de Fade-in para Notícias */
+.news-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.news-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.3s;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.news-item:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação na Footer */
+.animated-footer {
+    position: relative;
+    text-align: center;
+    background-color: #1e1e1e;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.footer-animation {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: url('https://media.tenor.com/4K2N-KfhsjMAAAAC/gaming.gif'); /* GIF animado de jogos */
+    background-size: cover;
+    transform: translateX(-50%);
+    animation: floatAnimation 3s infinite alternate ease-in-out;
+}
+
+@keyframes floatAnimation {
+    from {
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .news-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .news-item {
+        width: 90%;
+    }
+}
